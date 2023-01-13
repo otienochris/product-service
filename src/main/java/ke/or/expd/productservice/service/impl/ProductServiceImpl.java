@@ -30,8 +30,8 @@ public class ProductServiceImpl implements ProductService {
     public ProductDto saveProduct(ProductDto productDto) {
         log.info("Saving a new product.");
         Product product = mapProductDtoToProduct(productDto);
-        log.info("Product {} is saved.", product.getId());
         Product savedProduct = productRepository.save(product);
+        log.info("Product {} is saved.", savedProduct.getId());
         return mapProductToProductDto(savedProduct);
     }
 
